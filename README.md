@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [The Page](#The Page)
+* [The Page](#the Page)
 
 ## Instructions
 
