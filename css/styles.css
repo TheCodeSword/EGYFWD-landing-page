@@ -64,34 +64,88 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+header {
+    position: sticky;
+}
+
 .navbar__menu ul {
     padding-left: 0;
-    margin: 0;
+    margin: 0px;
     text-align: right;
 }
 
 .navbar__menu li {
     display: inline-block;
+    border-radius: 10px;
+    margin: 5px 0px;
+    padding: 5px;
 }
 
 .navbar__menu .menu__link {
-    display: block;
+    display: inline-block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
+.navbar__menu .menu__link a {
+    text-decoration: none;
+}
+
+.navbar__menu .menu__link:hover a {
+    color: white;
+}
+
 .navbar__menu .menu__link:hover {
+    cursor: pointer;
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
 }
 
+/* when its section is in the viewport */
+.activeLi {
+    background: #333;
+    color: #fff;
+}
+
+.activeLi a {
+    color: white;
+}
+
+@media only screen and (max-width: 900px) {
+    h1 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        border-radius: 0px 0px 10px 10px;
+        margin-top: -5px;
+    }
+    .navbar__menu ul {
+        text-align: center;
+    }
+
+    .navbar__menu .menu__link {
+        display: block;
+    }
+
+    .navbar__menu .menu__link {
+        border-radius: 0px;
+    }
+
+    .navbar__menu .menu__link:last-of-type {
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     width: 100%;
     z-index: 5;
@@ -106,6 +160,39 @@ section {
 
 .page__footer p{
     color: #fff;
+}
+
+/*button styles */
+button {
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 40px;
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    background-color: rgba(0,128,0,1);
+    color: lightgrey;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    color: white;
+    border: solid 1px white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+        width: 100px;
+        height: 50px;
+        font-size: initial;
+    }
 }
 
 
