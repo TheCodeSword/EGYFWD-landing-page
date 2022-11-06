@@ -51,11 +51,13 @@ let myButton = document.getElementById("totop");
 */
 
 
-// build the nav
-for(let i = 0; i < sections.length; i++) {
-    newListItem.innerHTML = `<a href="#${sectionsID[i]}">${navData[i]}</a>` 
-    navList.appendChild(newListItem.cloneNode(true)).setAttribute('class', 'menu__link'); //cloneNode avoids unwanted closures and lets the loop create 4 distinct nodes instead of creating the loop 4 times 
-}
+// build the navbar
+(function () {
+    for(let i = 0; i < sections.length; i++) {
+        newListItem.innerHTML = `<a href="#${sectionsID[i]}">${navData[i]}</a>` 
+        navList.appendChild(newListItem.cloneNode(true)).setAttribute('class', 'menu__link'); //cloneNode avoids unwanted closures and lets the loop create 4 distinct nodes instead of creating the loop 4 times 
+    }
+} () );
 
 // Scroll to section on link click
 let items = navList.children;
