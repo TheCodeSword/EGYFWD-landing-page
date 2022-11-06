@@ -46,11 +46,9 @@ for (let i = 0; i < sections.length; i++) {
 let myButton = document.getElementById("totop");
 
 
-
 /*
  End Global Variables
 */
-
 
 
 // build the nav
@@ -58,7 +56,6 @@ for(let i = 0; i < sections.length; i++) {
     newListItem.innerHTML = `<a href="#${sectionsID[i]}">${navData[i]}</a>` 
     navList.appendChild(newListItem.cloneNode(true)).setAttribute('class', 'menu__link'); //cloneNode avoids unwanted closures and lets the loop create 4 distinct nodes instead of creating the loop 4 times 
 }
-
 
 // Scroll to section on link click
 let items = navList.children;
@@ -73,10 +70,13 @@ navList.addEventListener('click', (e) => {
 // Set sections as active
 window.onscroll = function() {
     sections.forEach( (section) => {
+        let secOrder = Array.from(sections).indexOf(section); //getting the order of each section
         if (section.getBoundingClientRect().y <= 250 && section.getBoundingClientRect().y >= -350) {
-            section.classList.add('your-active-class');
+            section.classList.add('your-active-class'); //changing the style of the section in the viewport
+            items[secOrder].classList.add('activeLi'); //changing the style of the Li item in the nav bar
         } else {
             section.classList.remove('your-active-class');
+            items[secOrder].classList.remove('activeLi');
         }
     });
 
