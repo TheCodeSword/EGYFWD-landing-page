@@ -93,11 +93,11 @@ header {
     text-decoration: none;
 }
 
-.navbar__menu .menu__link:hover a {
+.navbar__menu .menu__link:active a {
     color: white;
 }
 
-.navbar__menu .menu__link:hover {
+.navbar__menu .menu__link:active {
     cursor: pointer;
     background: #333;
     color: #fff;
